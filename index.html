@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NASWIRE - Professional Business Solutions & Services">
+    <title>NASWIRE - Professional Business Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="naswire_logo_icon.png" alt="NASWIRE Logo" class="logo-img">
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#portfolio" class="nav-link">Our Work</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <button class="cta-button">Get Started</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Transform Your Business<br>
+                    <span class="gradient-text">With Expert Solutions</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Professional electrical services powered by expertise and reliability. 
+                    From residential to commercial projects, we illuminate your vision with precision and safety.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="2000">0</h3>
+                        <p class="stat-label">Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="30">0</h3>
+                        <p class="stat-label">Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number" data-target="100">0</h3>
+                        <p class="stat-label">Client Satisfaction %</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Professional electrical solutions for residential and commercial needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Residential Installations</h3>
+                    <p class="service-description">
+                        Complete home electrical installations including wiring, outlets, switches, and fixtures. Safe and code-compliant solutions for new builds and renovations.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Commercial Wiring</h3>
+                    <p class="service-description">
+                        Professional commercial electrical systems for offices, retail spaces, and industrial facilities. Expert design and installation for demanding environments.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Electrical Repairs</h3>
+                    <p class="service-description">
+                        Fast and reliable repairs for all electrical issues. From troubleshooting to fixing faulty wiring, outlets, and circuits with guaranteed workmanship.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Panel Upgrades</h3>
+                    <p class="service-description">
+                        Modernize your electrical system with panel upgrades and replacements. Increase capacity, improve safety, and meet today's power demands.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Lighting Installations</h3>
+                    <p class="service-description">
+                        Custom indoor and outdoor lighting solutions including LED upgrades, recessed lighting, chandeliers, and landscape illumination.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Emergency Services</h3>
+                    <p class="service-description">
+                        24/7 emergency electrical services for urgent repairs and power outages. Rapid response to keep your home or business running safely.
+                    </p>
+                    <a href="#contact" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-content">
+                    <h2 class="section-title">Why Choose NASWIRE?</h2>
+                    <p class="about-text">
+                        Since 2007, NASWIRE has been providing expert electrical services to residential and commercial clients. 
+                        With over 2,000 successful projects completed, we've built our reputation on quality workmanship and customer satisfaction.
+                    </p>
+                    <p class="about-text">
+                        Our licensed electrician brings decades of experience and a commitment to safety, reliability, and excellence. 
+                        We don't just wire buildings—we power your vision with professional electrical solutions you can trust.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Licensed & Insured</h4>
+                                <p>Fully certified electrician with comprehensive insurance coverage</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>2000+ Projects Completed</h4>
+                                <p>Extensive experience in residential and commercial electrical work</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Code Compliant</h4>
+                                <p>All work meets or exceeds electrical code standards</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <div>
+                                <h4>Emergency Services</h4>
+                                <p>Available for urgent electrical repairs when you need us</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio/Gallery Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Work</h2>
+                <p class="section-subtitle">Recent projects showcasing our expertise</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="project1.jpg" alt="Residential Electrical Installation" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Residential Wiring</h3>
+                            <p>Complete home electrical system</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="project2.jpg" alt="Commercial Panel Upgrade" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Panel Upgrade</h3>
+                            <p>Commercial electrical panel modernization</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="project3.jpg" alt="Lighting Installation" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>LED Lighting</h3>
+                            <p>Custom lighting installation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="project4.jpg" alt="Outdoor Electrical Work" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Outdoor Wiring</h3>
+                            <p>Exterior electrical solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="project5.jpg" alt="Industrial Electrical" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Industrial Work</h3>
+                            <p>Heavy-duty electrical systems</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <img src="project6.jpg" alt="Emergency Repair" loading="lazy">
+                        <div class="portfolio-overlay">
+                            <h3>Emergency Repairs</h3>
+                            <p>Fast response electrical fixes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Meet Our Team</h2>
+                <p class="section-subtitle">Licensed professionals dedicated to excellence</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="pedro-nascimento.jpg" alt="Pedro Nascimento" loading="lazy">
+                    </div>
+                    <h3 class="member-name">Pedro Nascimento</h3>
+                    <p class="member-role">Company Owner, Licensed Electrician</p>
+                    <button class="member-bio-button" onclick="openBioModal('pedro')">About Pedro</button>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="marc-tucci.jpg" alt="Marc Tucci" loading="lazy">
+                    </div>
+                    <h3 class="member-name">Marc Tucci</h3>
+                    <p class="member-role">Licensed Electrician</p>
+                    <button class="member-bio-button" onclick="openBioModal('marc')">About Marc</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Modal -->
+    <div class="bio-modal" id="bioModal">
+        <div class="bio-modal-content">
+            <span class="bio-modal-close" onclick="closeBioModal()">&times;</span>
+            <div id="bioContent">
+                <!-- Content will be inserted by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-subtitle">Real results from real businesses</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Highly professional and efficient. A lot of quality in its services and very close to the customer. Always recommend your services."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MC</div>
+                        <div>
+                            <h4 class="author-name">Mário Craveiro</h4>
+                            <p class="author-role">Satisfied Customer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "NASWIRE transformed our business operations completely. Their expertise and 
+                        dedication to our success was evident from day one. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div>
+                            <h4 class="author-name">John Davidson</h4>
+                            <p class="author-role">Property Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Professional, responsive, and results-driven. NASWIRE helped us achieve our goals 
+                        faster than we thought possible. A true partner in success."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div>
+                            <h4 class="author-name">Sarah Mitchell</h4>
+                            <p class="author-role">Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">
+                        "Great service. Always on time and does what was agreed to with no excuses. 'No problem' heard regularly."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">FF</div>
+                        <div>
+                            <h4 class="author-name">Filipe Ferreira</h4>
+                            <p class="author-role">Client</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's Work Together</h2>
+                    <p class="contact-text">
+                        Need professional electrical services? Get in touch with us today for a free consultation. 
+                        From simple repairs to complete installations, NASWIRE delivers reliable electrical solutions.
+                    </p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>416-456-4089</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>pedro@naswire.com</p>
+                                <p>p.naswireinc@gmail.com<p></p>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 7:30 AM - 5:00 PM</p>
+                                <p>Sat: 8:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="consulting">Business Consulting</option>
+                                <option value="technology">Technology Solutions</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="financial">Financial Planning</option>
+                                <option value="team">Team Development</option>
+                                <option value="analytics">Analytics & Insights</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img src="naswire_logo_text.png" alt="NASWIRE Logo" class="footer-logo">
+                    <p class="footer-text">
+                        Providing quality residential and commercial electrical services since 2007. Your trusted electrician.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100063505627363" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/naswireinc/" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Residential Installations</a></li>
+                        <li><a href="#services">Commercial Wiring</a></li>
+                        <li><a href="#services">Electrical Repairs</a></li>
+                        <li><a href="#services">Panel Upgrades</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>416-456-4089</li>
+                        <li>pedro@naswire.com</li>
+                        <li>p.naswireinc@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 NASWIRE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
