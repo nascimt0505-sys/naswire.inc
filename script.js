@@ -118,66 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
 const contactForm = document.getElementById('contactForm');
 const formStatus = document.getElementById('formStatus');
 
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        service: document.getElementById('service').value,
-        message: document.getElementById('message').value
-    };
-    
-    // Show loading state
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalText = submitButton.textContent;
-    submitButton.textContent = 'Sending...';
-    submitButton.disabled = true;
-    
-    try {
-        // Simulate form submission (replace with actual API call)
-        await simulateFormSubmission(formData);
-        
-        // Show success message
-        formStatus.className = 'form-status success';
-        formStatus.textContent = 'Thank you! We\'ll get back to you within 24 hours.';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            formStatus.style.display = 'none';
-        }, 5000);
-        
-    } catch (error) {
-        // Show error message
-        formStatus.className = 'form-status error';
-        formStatus.textContent = 'Oops! Something went wrong. Please try again or call us directly.';
-    } finally {
-        // Reset button
-        submitButton.textContent = originalText;
-        submitButton.disabled = false;
-    }
-});
+// Note: Form now uses FormSubmit service and will redirect after submission
+// The form action is set to https://formsubmit.co/p.naswireinc@gmail.com
+// First submission will require email confirmation, then it will work automatically
 
-// Simulate form submission (replace with actual backend integration)
-function simulateFormSubmission(formData) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Log form data to console (for demonstration)
-            console.log('Form submitted with data:', formData);
-            
-            // Simulate success
-            resolve({ success: true });
-            
-            // To simulate error, uncomment:
-            // reject(new Error('Submission failed'));
-        }, 1500);
-    });
-}
 
 // Email validation
 function isValidEmail(email) {
@@ -327,41 +271,6 @@ if (phoneInput) {
     });
 }
 
-// Add cursor follow effect (optional enhancement)
-const cursor = document.createElement('div');
-cursor.className = 'custom-cursor';
-cursor.style.cssText = `
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-    display: none;
-`;
-
-document.body.appendChild(cursor);
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.display = 'block';
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-// Scale cursor on hover over interactive elements
-const interactiveElements = document.querySelectorAll('a, button, .service-card');
-interactiveElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(1.5)';
-    });
-    
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1)';
-    });
-});
-
 // Add performance monitoring
 if ('PerformanceObserver' in window) {
     const perfObserver = new PerformanceObserver((list) => {
@@ -439,6 +348,106 @@ document.getElementById('bioModal')?.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeBioModal();
+    }
+});
+
+// Toggle more portfolio images
+function toggleMoreImages() {
+    const moreImages = document.getElementById('moreImages');
+    const btn = document.getElementById('seeMoreBtn');
+    
+    if (moreImages.style.display === 'none') {
+        moreImages.style.display = 'grid';
+        btn.textContent = 'Show Less';
+    } else {
+        moreImages.style.display = 'none';
+        btn.textContent = 'Other Work';
+    }
+}
+
+// Lightbox functionality for gallery images
+function openLightbox(imageSrc) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    
+    if (lightbox && lightboxImage) {
+        lightboxImage.src = imageSrc;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Close lightbox when clicking outside the image
+document.getElementById('lightbox')?.addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        closeLightbox();
+    }
+});
+
+// Close lightbox with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeBioModal();
+        closeReviewForm();
+    }
+});
+
+// Review Form Modal
+function openReviewForm() {
+    const modal = document.getElementById('reviewModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeReviewForm() {
+    const modal = document.getElementById('reviewModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Handle review form submission
+document.getElementById('reviewForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+    
+    try {
+        const response = await fetch(e.target.action, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            alert('Thank you for your review! We truly appreciate your feedback.');
+            e.target.reset();
+            closeReviewForm();
+        } else {
+            throw new Error('Submission failed');
+        }
+    } catch (error) {
+        alert('There was an issue submitting your review. Please try again or contact us directly.');
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
     }
 });
 
