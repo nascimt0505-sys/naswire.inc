@@ -14,17 +14,67 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
+// Navbar scroll effect - hide on scroll down, show on scroll up or after 2 seconds of inactivity
 const navbar = document.getElementById('navbar');
+const topContactBar = document.querySelector('.top-contact-bar');
 let lastScroll = 0;
+let scrollTimeout;
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
+    // Clear existing timeout
+    if (scrollTimeout) {
+        clearTimeout(scrollTimeout);
+    }
+    
     if (currentScroll > 50) {
         navbar.classList.add('scrolled');
+        
+        // Hide bars when scrolling down, show when scrolling up
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down - hide completely
+            if (topContactBar) {
+                topContactBar.style.transform = 'translateY(-100%)';
+                topContactBar.style.opacity = '0';
+                topContactBar.style.visibility = 'hidden';
+            }
+            navbar.style.transform = 'translateY(-100%)';
+            navbar.style.opacity = '0';
+            navbar.style.visibility = 'hidden';
+        } else {
+            // Scrolling up - show
+            if (topContactBar) {
+                topContactBar.style.transform = 'translateY(0)';
+                topContactBar.style.opacity = '1';
+                topContactBar.style.visibility = 'visible';
+            }
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.opacity = '1';
+            navbar.style.visibility = 'visible';
+        }
+        
+        // Set timeout to show bars after 5 seconds of no scrolling
+        scrollTimeout = setTimeout(() => {
+            if (topContactBar) {
+                topContactBar.style.transform = 'translateY(0)';
+                topContactBar.style.opacity = '1';
+                topContactBar.style.visibility = 'visible';
+            }
+            navbar.style.transform = 'translateY(0)';
+            navbar.style.opacity = '1';
+            navbar.style.visibility = 'visible';
+        }, 5000);
     } else {
         navbar.classList.remove('scrolled');
+        if (topContactBar) {
+            topContactBar.style.transform = 'translateY(0)';
+            topContactBar.style.opacity = '1';
+            topContactBar.style.visibility = 'visible';
+        }
+        navbar.style.transform = 'translateY(0)';
+        navbar.style.opacity = '1';
+        navbar.style.visibility = 'visible';
     }
     
     lastScroll = currentScroll;

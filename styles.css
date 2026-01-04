@@ -31,6 +31,13 @@ html {
     scroll-padding-top: 130px; /* Top contact bar + navbar height */
 }
 
+/* Desktop zoom - only apply on screens wider than 968px */
+@media (min-width: 969px) {
+    html {
+        zoom: 0.67;
+    }
+}
+
 body {
     font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
     color: var(--text-dark);
@@ -57,6 +64,7 @@ body {
     z-index: 1001;
     padding: 0.5rem 0;
     font-size: 0.875rem;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .contact-bar-wrapper {
@@ -100,7 +108,7 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     border-bottom: 1px solid rgba(255, 153, 51, 0.1);
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .navbar.scrolled {
@@ -946,7 +954,7 @@ body {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
@@ -1017,7 +1025,7 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease;
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: high-quality;
 }
 
 .portfolio-item:hover .portfolio-image img {
@@ -1062,7 +1070,7 @@ body {
 
 /* Gallery Page Styles */
 .gallery-hero {
-    padding: 140px 0 60px;
+    padding: 180px 0 80px;
     background: linear-gradient(135deg, var(--background) 0%, var(--background-light) 100%);
     text-align: center;
 }
@@ -1124,7 +1132,7 @@ body {
     object-fit: cover;
     transition: transform 0.3s ease;
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: high-quality;
 }
 
 .gallery-item .gallery-image {
@@ -1162,6 +1170,8 @@ body {
     border-radius: 8px;
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.8);
     animation: zoomIn 0.3s ease;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
 }
 
 @keyframes zoomIn {
@@ -1738,12 +1748,13 @@ body {
     .contact-bar-wrapper {
         font-size: 0.75rem;
         gap: 1rem;
+        flex-wrap: wrap;
     }
 
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 114px; /* Top contact bar + navbar */
+        top: 120px; /* Top contact bar + navbar, accounting for potential wrap */
         flex-direction: column;
         background: var(--background-light);
         width: 100%;
@@ -1850,33 +1861,39 @@ body {
     }
 
     .top-contact-bar {
-        font-size: 0.7rem;
-        padding: 0.4rem 0;
+        font-size: 0.65rem;
+        padding: 0.5rem 0;
     }
 
     .contact-bar-wrapper {
-        gap: 0.75rem;
-        font-size: 0.7rem;
+        gap: 0.5rem;
+        font-size: 0.65rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact-bar-item {
+        font-size: 0.65rem;
     }
 
     .contact-bar-item svg {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 
     .hero {
-        padding-top: 120px; /* Adjusted for smaller top bar */
+        padding-top: 140px; /* Adjusted for wrapped contact bar */
         min-height: auto;
         padding-bottom: 3rem;
     }
 
     .hero-title {
-        font-size: 1.75rem;
-        line-height: 1.3;
+        font-size: 1.65rem;
+        line-height: 1.2;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .section-title {
@@ -1945,9 +1962,25 @@ body {
     }
 
     .lightbox-cta-btn {
-        bottom: 2rem;
-        padding: 0.875rem 2rem;
-        font-size: 1rem;
+        bottom: 1.5rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        left: 1rem;
+        right: 1rem;
+        transform: none;
+        width: calc(100% - 2rem);
+    }
+
+    .lightbox-cta-btn:hover {
+        transform: translateY(-2px);
+    }
+
+    .lightbox-close {
+        top: 1rem;
+        right: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 40px;
     }
 
     .pagination {
